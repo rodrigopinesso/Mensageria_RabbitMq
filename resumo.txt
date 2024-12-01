@@ -1,0 +1,47 @@
+1. Conceitos Básicos de Mensageria:
+
+Filas:
+Estruturas que armazenam mensagens até que sejam processadas.
+Seguem a ordem FIFO (First In, First Out).
+Produtores:
+Entidades que enviam mensagens para as filas.
+Não interagem diretamente com os consumidores.
+Consumidores:
+Entidades que retiram mensagens das filas e as processam.
+Podem ser múltiplos consumidores para paralelismo.
+Tópicos:
+Usados para publicação/assinatura (pub/sub).
+Mensagens são enviadas para todos os assinantes interessados.
+Partições:
+Subdivisões dentro de um tópico (Kafka).
+Permitem escalabilidade ao distribuir mensagens entre consumidores.
+
+2. RabbitMQ:
+
+Tipo: Broker de mensagens tradicional (AMQP).
+Arquitetura: Baseada em filas e roteamento.
+Caso de uso: Aplicações que exigem entrega garantida e roteamento complexo de mensagens.
+Características principais:
+Suporta roteamento avançado com exchanges (direto, fanout, tópico).
+Mensagens podem ser persistentes.
+Acknowledgements garantem que a mensagem foi processada.
+
+3. BullMQ (Bull):
+
+Tipo: Gerenciador de filas baseado em Redis.
+Arquitetura: Fila simples, sem pub/sub.
+Caso de uso: Tarefas assíncronas em aplicações Node.js.
+Características principais:
+Baseado no Redis, oferece alta performance.
+Ideal para processamento de jobs em segundo plano (e-mails, tarefas agendadas).
+Suporte a retries automáticos e priorização de tarefas.
+
+4. Kafka:
+
+Tipo: Plataforma de streaming distribuída.
+Arquitetura: Pub/Sub com partições para paralelismo.
+Caso de uso: Processamento de grandes volumes de dados em tempo real.
+Características principais:
+Alta escalabilidade com partições e réplicas.
+Retenção configurável de mensagens por tempo ou espaço.
+Consumidores podem ler mensagens antigas (não exclusivas).
